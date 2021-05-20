@@ -1,0 +1,99 @@
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.card-product {
+  position: relative;
+  overflow: hidden;
+  height: 160px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  // border-radius: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.card-product img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+}
+
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.card-restaurant {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-restaurant > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-restaurant h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  border-radius: 4px;
+}
+
+.card-restaurant p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+  // border-radius: 4px;
+}
+
+
+.card-restaurant .card-restaurant-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  // align-items: flex-end;
+  position: relative;
+}
+
+.card-restaurant-infos .card-restaurant-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  // border-radius: 4px;
+}
+
+// .btn {
+//   color: white;
+// }
