@@ -1,10 +1,13 @@
-<h1><%= @list.name %> list</h1>
+<div></div>
+
+<h1><%= @list.name.capitalize %></h1>
 
 <div class="bookmarks m-3">
   <% if @list.bookmarks.any? %>
     <h2>Bookmarks ( <%= @list.bookmarks.count %> )</h2>
     <% @list.bookmarks.each do |bookmark| %>
       <hr>
+      <p> <%= bookmark.comment %> </p>
       <p> <%= bookmark.comment %> </p>
     <% end %>
   <% end %>

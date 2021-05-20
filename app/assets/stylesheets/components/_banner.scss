@@ -1,0 +1,32 @@
+.banner {
+  background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.2)), url(https://cdn.pixabay.com/photo/2015/09/02/12/45/movie-918655_1280.jpg);
+  // background-image: image(https://cdn.pixabay.com/photo/2015/09/02/12/45/movie-918655_1280.jpg);
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  /* background-position: 40 40; */
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0, 20%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // padding-top: 40vh;
+}
+
+.banner h1 {
+  font-size: 64px;
+  margin-bottom: 8px;
+}
+
+.banner p {
+  font-size: 24px;
+  margin-bottom: 32px;
+
+}
+
+@media (min-width: 360px) {
+  .banner h1 {
+    font-size: 72px;
+  }
+}
