@@ -2,7 +2,7 @@ class BookmarksController < ApplicationController
   def new
     @list = List.find(params[:list_id])
     @bookmark = Bookmark.new
-    # @movies = Movie.where(id: @list.movies).order(:name)
+    @movies = Movie.where.not(id: @list.movies).order(:title)
   end
 
   def create
@@ -23,12 +23,12 @@ class BookmarksController < ApplicationController
   def destroy
     @bookmark = Bookmark.find(params[:id])
     @bookmark.destroy
-    redirect_to lists_path
+    redirect_to list_path(@bookmark.list_id)
   end
 
   private
 
   def bookmark_params
-    params.require(:bookmark).permit(:comment, :movie_id)
+    params.require(:bookmark).permit(:comment, :movie_id, :list_id)
   end
 end

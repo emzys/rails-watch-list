@@ -4,6 +4,20 @@
   grid-gap: 16px;
 }
 
+.list-card {
+  position: relative;
+}
+
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  &:hover {
+    background-color: rgba(254, 185, 52, .2);
+  }
+}
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
@@ -54,6 +68,21 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
+.card-body {
+  position: relative;
+  .fa-trash-alt {
+    position: absolute;
+    bottom: 16px;
+    top: 16px;
+    right: 16px;
+    font-size: 24px;
+    color: $yellow;
+  }
+}
+
+.comment {
+  font-style: italic;
+}
 
 // .card-product {
 //   position: relative;

@@ -1,16 +1,39 @@
-<div></div>
+<div class="banner banner-subpage text-center">
+			<div class="container">
+				<h2><%= @list.name.capitalize %></h2>
+        <%= link_to new_list_bookmark_path(@list) do %>
+          <div class="add_list btn btn-info mt-3 px-3 py-1">
+            <p class="m-0"><i class="fas fa-plus"></i> Bookmark a movie</p>
+          </div>
+        <% end %>
+			</div>
+</div>
 
-<h1><%= @list.name.capitalize %></h1>
-
-<div class="bookmarks m-3">
+<div class="container my-4">
+    <h2 class="m-4">WatchList contains: <%= pluralize(@list.bookmarks.count, 'bookmark') %></h2>
+<div class="row bookmarks m-3 justify-content-center">
   <% if @list.bookmarks.any? %>
-    <h2>Bookmarks ( <%= @list.bookmarks.count %> )</h2>
     <% @list.bookmarks.each do |bookmark| %>
-      <hr>
-      <p> <%= bookmark.comment %> </p>
-      <p> <%= bookmark.comment %> </p>
+      <div class="movie-card rounded m-3 col-12 col-sm-6 col-md-4" style="width: 18rem;">
+        <img class="card-img-top" src="<%= bookmark.movie[:poster_url] %>" alt="Poster image">
+        <div class="card-body">
+          <h4><%= bookmark.movie[:title] %></h4>
+          <% if bookmark.comment %>
+            <p class="card-text comment"> <i class="fas fa-quote-left"></i> <%= bookmark.comment %> </p>
+          <% end %>
+          <p>Overview: <%= bookmark.movie[:overview] %></p>
+          <%= link_to bookmark_path(bookmark[:id]), method: :delete, data: { confirm: "Delete #{bookmark.movie[:title]}?" } do %>
+            <i class="fas fa-trash-alt"></i>
+          <% end %>
+        </div>
+      </div>
     <% end %>
   <% end %>
 </div>
+</div>
 
-<%= link_to "Add bookmark", new_list_bookmark_path(@list) %>
+
+
+
+
+<%# <%= link_to "Add bookmark", new_list_bookmark_path(@list) %>
