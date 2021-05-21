@@ -68,13 +68,13 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-.card-body {
+.movie-card {
   position: relative;
   .fa-trash-alt {
     position: absolute;
     bottom: 16px;
-    top: 16px;
-    right: 16px;
+    top: 8px;
+    right: -16px;
     font-size: 24px;
     color: $yellow;
   }

@@ -4,7 +4,7 @@ const initUpdateNavbarOnScroll = () => {
   const showBg = document.querySelector('.navbar-collapse');
   if (navbar) {
     window.addEventListener('scroll', () => {
-      console.log(window.scrollY);
+      // console.log(window.scrollY);
       if (window.scrollY >= 170)   {
         navbar.classList.add('navbar-lewagon-dark');
         if (showBg.classList.contains('show')) {

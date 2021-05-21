@@ -7,13 +7,15 @@
   background-attachment: fixed;
   /* background-position: 40 40; */
   color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0, 20%);
   display: flex;
   justify-content: center;
   align-items: center;
   // padding-top: 40vh;
 }
 
+.banner-text {
+  text-shadow: 1px 1px 3px rgba(0,0,0, 20%);
+}
 
 .banner h1 {
   font-size: 64px;
@@ -23,7 +25,6 @@
 .banner p {
   font-size: 24px;
   margin-bottom: 32px;
-
 }
 
 .banner-subpage {

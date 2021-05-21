@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-dark navbar-lewagon fixed-top">
-  <%= link_to "#", class: "navbar-brand" do %>
+  <%= link_to lists_path, class: "navbar-brand" do %>
     <i class="fas fa-film"></i>
   <% end %>
 
@@ -12,9 +12,9 @@
     <ul class="navbar-nav mr-auto align-items-center">
       <%# <li class="nav-item active">
         <%= link_to "Home", "#", class: "nav-link" %>
-      </li> 
+      </li>
       <li class="nav-item">
-        <%= link_to "WatchLists", "#", class: "nav-link" %>
+        <%= link_to "WatchLists", '/lists#all-lists', class: "nav-link" %>
       </li>
       <li class="nav-item">
         <%= image_tag "https://kitt.lewagon.com/placeholder/users/emzys", class: "avatar dropdown-toggle border border-white m-2", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>

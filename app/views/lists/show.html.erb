@@ -10,21 +10,23 @@
 </div>
 
 <div class="container my-4">
-    <h2 class="m-4">WatchList contains: <%= pluralize(@list.bookmarks.count, 'bookmark') %></h2>
+    <h2 class="m-4 mt-5">WatchList contains <%= pluralize(@list.bookmarks.count, 'bookmark') %>:</h2>
 <div class="row bookmarks m-3 justify-content-center">
   <% if @list.bookmarks.any? %>
     <% @list.bookmarks.each do |bookmark| %>
-      <div class="movie-card rounded m-3 col-12 col-sm-6 col-md-4" style="width: 18rem;">
+      <div class="movie-card rounded my-3 mr-5 col-12 col-sm-3" style="width: 18rem;">
         <img class="card-img-top" src="<%= bookmark.movie[:poster_url] %>" alt="Poster image">
         <div class="card-body">
+          <div class="card-title">
           <h4><%= bookmark.movie[:title] %></h4>
+          <%= link_to bookmark_path(bookmark[:id]), method: :delete, data: { confirm: "Delete #{bookmark.movie[:title]}?" } do %>
+            <i class="fas fa-trash-alt"></i>
+          <% end %>
+          </div>
           <% if bookmark.comment %>
             <p class="card-text comment"> <i class="fas fa-quote-left"></i> <%= bookmark.comment %> </p>
           <% end %>
           <p>Overview: <%= bookmark.movie[:overview] %></p>
-          <%= link_to bookmark_path(bookmark[:id]), method: :delete, data: { confirm: "Delete #{bookmark.movie[:title]}?" } do %>
-            <i class="fas fa-trash-alt"></i>
-          <% end %>
         </div>
       </div>
     <% end %>
