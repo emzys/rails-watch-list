@@ -27,6 +27,7 @@ gem 'jbuilder', '~> 2.7'
 
 #ADDED
 gem 'autoprefixer-rails', '10.2.5'
+gem 'dotenv-rails', groups: [:development, :test]
 gem 'font-awesome-sass', '~> 5.12.0'
 gem 'open-uri'
 gem 'simple_form'
