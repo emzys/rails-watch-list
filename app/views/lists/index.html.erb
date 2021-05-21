@@ -25,7 +25,10 @@
     <% @lists.each do |list| %>
     <div class="list-card">
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : "https://source.unsplash.com/600x300/?movie,#{list.name}" %>)">
-      <%= list.name %>
+      <div class="list-info">
+      <h2><strong><%= list.name %></strong></h2>
+      <small><%= pluralize(list.bookmarks.count, 'movie') %></small>
+      </div>
       <%= link_to '', list_path(list), class: 'card-link'  %>
       </div>
     </div>
